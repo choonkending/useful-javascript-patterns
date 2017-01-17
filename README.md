@@ -1,3 +1,8 @@
-# My Awesome Book
+# Ding's bag of Useful Javascript Patterns
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+This is normally the bit where people talk about the importance of patterns. 
+
+I'm just going to leave this part blank if I may.
+
+
+
