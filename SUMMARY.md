@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [Pure Vanilla](chapter1.md)
-* [React Patterns](patterns-in-react.md)
+* [Design Patterns](chapter1.md)
+* FP for life
+* [Libraries and Frameworks](patterns-in-react.md)
 
