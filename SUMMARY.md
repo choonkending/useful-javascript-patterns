@@ -1,3 +1,6 @@
 # Summary
 
-* [First Chapter](chapter1.md)
+* [Introduction](README.md)
+* [Pure Vanilla](chapter1.md)
+* [React Patterns](patterns-in-react.md)
+

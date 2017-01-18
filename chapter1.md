@@ -1,8 +1,6 @@
-# React
+# Pure Vanilla
 
-## Higher Order Components
 
-## Functions as Child Components
 
 
 
