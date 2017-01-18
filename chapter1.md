@@ -38,7 +38,7 @@ const productWithEverything = new Product('life', '15', 'sad');
 
 Oh God. Creating a product now is _complex_ and _error-prone_. Not only do you need to worry about _what_ this object _**represents**_, you also need worry about its _**construction**_.
 
-There you go! The above problem is what the builder pattern attempts to solve. 
+There you go! The above problem is what the builder pattern attempts to solve.
 
 > Builders separate the construction of a complex object from its representation.
 
