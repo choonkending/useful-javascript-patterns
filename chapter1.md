@@ -55,10 +55,10 @@ class Product {
         return new Product(type, this.price, this.id);
     }
     withPrice(price) {
-        return new Price(this.type, price, this.id);
+        return new Product(this.type, price, this.id);
     }
     withID(id) {
-        return new Price(this.type, this.price, id);
+        return new Product(this.type, this.price, id);
     }
 }
 

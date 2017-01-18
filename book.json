@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        "comment"
+    ],
+    "pluginsConfig": {
+        "comment": {
+            "highlightCommented": true
+        }
+    }
+}
