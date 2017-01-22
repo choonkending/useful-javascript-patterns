@@ -44,6 +44,8 @@ There you go! The above problem is what the builder pattern attempts to solve.
 
 As you supply more arguments to your constructor, it becomes harder to reason about what the factory function does.
 
+The following is an example of using the builder pattern to simplify object creation. 
+
 ```js
 class Product {
     constructor(type, price, id) {
@@ -67,6 +69,26 @@ const product = new Product()
                     .withPrice('15')
                     .withID('good');
 ```
+
+Way more readable right?
+
+## Strategy Pattern
+
+My understanding of the strategy pattern is to have different implementations of the _**same behavior **_that can be used interchangeably during run-time. 
+
+Imagine having a set of configurations defined in the UI of your website. 
+
+```js
+
+```
+
+## Composite Pattern
+
+
+
+## Decorator Pattern
+
+This pattern is used for **extending behavior** of an object without changing the behavior of other objects from the same class.
 
 
 

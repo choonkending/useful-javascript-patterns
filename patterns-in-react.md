@@ -4,17 +4,44 @@
 
 I like calling them HOCs for short. Pronounced HOK because spelling out three letters is excruciating.
 
-Higher Order Components are useful when you wish to implement common functionality among components, or when you see certain implementation details as a necessary _abstraction_.
+Higher Order Components are useful when you wish to implement common functionality among components, or when you see certain implementation details as a _**necessary abstraction**_.
 
+I remember being slightly confused when I first read about _**Higher Order Components**_, because they sounded eerily similar to _**Higher Order Functions**._ 
 
+| Higher Order Components | Higher Order Functions |
+| :--- | :--- |
+| Functions that accept a component as an argument and return another component which wraps the given component. | Functions that accept functions as arguments or return a function as a result. |
 
-I remember being slightly confused when I first read about _Higher Order Components_, because they sounded eerily similar to _Higher Order Functions._ Higher order functions are functions that accepts functions as arguments or returns a function as a result.
+I will explain in a bit how you could make a HOC a HOF \(you heard this first from me\).
 
+But before that, here is a simple example of a HOC that adds an additional prop to the given component.
 
+```js
+const enhance = ComposedComponent => class extends React.Component {
+    render() {
+        return <ComposedComponent {...this.props} enhance="bru" />;
+    }
+};
+```
+
+In the real world, you might be tasked to implement tracking on page load or some horrendous acts that only happen on _componentDidMount_. 
+
+Rather than violating the sanctity that is your beautiful App, you choose to hide the implementation with this abstraction.
+
+```js
+const doHorribleThings = ComposedComponent => class extends React.Component {
+    componentDidMount() {
+        clubBabySeal();
+    }
+    render() {
+        return <ComposedComponent {...this.props} />;
+    }
+};
+```
+
+### Variations to your HOC
 
 If you would like a deeper dive into HOCs, read this excellent post [http://rea.tech/reactjs-real-world-examples-of-higher-order-components/](http://rea.tech/reactjs-real-world-examples-of-higher-order-components/ "Real World Examples of Higher Order Components") by my mate @mehdimollaverdi.
-
-
 
 ## Functions as Child Components
 
