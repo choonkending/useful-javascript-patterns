@@ -74,7 +74,7 @@ Way more readable right?
 
 ## Strategy Pattern
 
-My understanding of the strategy pattern is to have different implementations of the \_**same behavior **\_that can be used interchangeably during run-time.
+My understanding of the strategy pattern is to have different implementations of the **same behavior **that can be used interchangeably during run-time.
 
 Imagine having a set of configurations defined in the UI of your website.
 
@@ -83,4 +83,8 @@ Imagine having a set of configurations defined in the UI of your website.
 ## Decorator Pattern
 
 This pattern is used for **extending behavior** of an object without changing the behavior of other objects from the same class.
+
+## Visitor Pattern
+
+
 
