@@ -1,10 +1,15 @@
 {
     "plugins": [
-        "comment"
+        "comment",
+        "google-adsense",
+        "init-adsense"
     ],
     "pluginsConfig": {
         "comment": {
             "highlightCommented": true
+        },
+        "init-adsense": {
+            "client": "ca-pub-2461706123203018"
         }
     }
 }
