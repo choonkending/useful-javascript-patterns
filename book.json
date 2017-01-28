@@ -1,7 +1,6 @@
 {
     "plugins": [
         "comment",
-        "google-adsense",
         "init-adsense"
     ],
     "pluginsConfig": {
