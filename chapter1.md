@@ -6,7 +6,11 @@ Just some ol' skool ES6/ES2015.
 
 ## Builder Pattern
 
+### Introduction
+
 It is an **object creation** pattern.
+
+### Problem
 
 Imagine creating a simple Product class.
 
@@ -38,9 +42,11 @@ const productWithEverything = new Product('life', '15', 'sad');
 
 Oh God. Creating a product now is _complex_ and _error-prone_. Not only do you need to worry about _what_ this object _**represents**_, you also need worry about its _**construction**_.
 
-There you go! The above problem is what the builder pattern attempts to solve.
+The above problem is what the builder pattern attempts to solve.
 
-> Builders separate the construction of a complex object from its representation.
+### How is this pattern useful?
+
+_**Builders separate the construction of a complex object from its representation.**_
 
 As you supply more arguments to your constructor, it becomes harder to reason about what the factory function does.
 
@@ -72,6 +78,20 @@ const product = new Product()
 
 Way more readable right?
 
+## Decorator Pattern
+
+### Introduction
+
+A decorator:
+
+* wraps an existing object
+* implements the interface of the wrapped object
+* extends the functionality of the wrapped object
+
+### Problem
+
+### How is this pattern useful?
+
 ## Strategy Pattern
 
 My understanding of the strategy pattern is to have different implementations of the **same behavior **that can be used interchangeably during run-time.
@@ -79,10 +99,6 @@ My understanding of the strategy pattern is to have different implementations of
 Imagine having a set of configurations defined in the UI of your website.
 
 ## Composite Pattern
-
-## Decorator Pattern
-
-This pattern is used for **extending behavior** of an object without changing the behavior of other objects from the same class.
 
 ## Visitor Pattern
 
