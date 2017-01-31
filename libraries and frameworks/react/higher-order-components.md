@@ -1,6 +1,4 @@
-# React
-
-## Higher Order Components
+# Higher Order Components
 
 I like calling them HOCs for short. Pronounced HOK because spelling out three letters is excruciating.
 
@@ -46,7 +44,7 @@ const addHam = ComposedComponent => props => <ComposedComponent {...props} ham={
 
 Tada! HOCs can be HOFs, but I do think you should always question whether the **HOC you are designing is a necessary abstraction**.
 
-### Real World HOC
+## Real World HOC
 
 In the real world, you might be tasked to implement tracking on page load or some horrendous acts that only happen on _componentDidMount_.
 
@@ -63,13 +61,10 @@ const doHorribleThings = ComposedComponent => class extends React.Component {
 };
 ```
 
-### Variations to your HOC
+## Variations to your HOC
 
 
 
 If you would like a deeper dive into HOCs, read this excellent post [http://rea.tech/reactjs-real-world-examples-of-higher-order-components/](http://rea.tech/reactjs-real-world-examples-of-higher-order-components/ "Real World Examples of Higher Order Components") by my mate @mehdimollaverdi.
 
-## Functions as Child Components
-
-I wrote this [http://rea.tech/functions-as-child-components-and-higher-order-components/](http://rea.tech/functions-as-child-components-and-higher-order-components/ "Functions as Child Components and Higher Order Components") a while back. Still am a massive fan.
 
