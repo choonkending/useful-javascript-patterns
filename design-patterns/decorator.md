@@ -35,7 +35,7 @@ Kewl right? It's like a contract, only without having to sign your life away.
 
 Back to reality now though.
 
-You are doing _**production**_ things in a _**production** _world, so you need to put your _**production**_ hat on to brace for some _**production**_ _**errors**_. Did I mention you are running on production?
+You are doing _**production**_ things in a _**production** **world**, so you need to put your _**production**_ hat on to brace for some _**production**_ _**errors**. Did I mention you are running on production?
 
 You now managed to get this awesome library working, but you need to log errors for monitoring so you can sleep at night.
 
@@ -56,6 +56,18 @@ Doesn't feel right does it?
 You have absolutely no idea _where_ and you resort to some powerful function that will miraculously catches everything.
 
 Hmm...
+
+What about if we place the _try catch_ right where the code that uses **NetworkInterface **is run?
+
+```js
+try {
+    runMyCodeThatInternallyUsesNetworkInterface();
+} catch (error) {
+    doSomeLogging(error);
+}
+```
+
+Close enough. 
 
 ## How is this pattern useful?
 
