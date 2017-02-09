@@ -67,7 +67,7 @@ try {
 }
 ```
 
-Close enough. 
+Close enough.
 
 ## How is this pattern useful?
 
