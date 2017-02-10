@@ -57,9 +57,9 @@ Doesn't feel right does it?
 
 You have absolutely no idea _where_ and you resort to some powerful function that will miraculously catches everything.
 
-What if we wanted to log specific things related only to _**NetworkInterface**_? 
+What if we wanted to log specific things related only to _**NetworkInterface**_?
 
-What we wish is for is to _**extend the functionality **_of _**NetworkInterface **_to include logging?
+What we wish is for is to _**extend the functionality **\_of _**NetworkInterface **\_to include logging?
 
 ## How is this pattern useful?
 
