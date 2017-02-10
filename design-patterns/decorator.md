@@ -35,9 +35,11 @@ Kewl right? It's like a contract, only without having to sign your life away.
 
 Back to reality now though.
 
+### Challenge: Logging
+
 You are doing _**production**_ things in a _**production** **world**, so you need to put your _**production**_ hat on to brace for some _**production**_ _**errors**. Did I mention you are running on production?
 
-You now managed to get this awesome library working, but you need to log errors for monitoring so you can sleep at night.
+You now managed to get this awesome library working, but you need to _**log errors**_ for monitoring so you can sleep at night.
 
 _**But where do I log it?**_
 
@@ -55,19 +57,9 @@ Doesn't feel right does it?
 
 You have absolutely no idea _where_ and you resort to some powerful function that will miraculously catches everything.
 
-Hmm...
+What if we wanted to log specific things related only to _**NetworkInterface**_? 
 
-What about if we place the _try catch_ right where the code that uses **NetworkInterface **is run?
-
-```js
-try {
-    runMyCodeThatInternallyUsesNetworkInterface();
-} catch (error) {
-    doSomeLogging(error);
-}
-```
-
-Close enough.
+What we wish is for is to _**extend the functionality **_of _**NetworkInterface **_to include logging?
 
 ## How is this pattern useful?
 
