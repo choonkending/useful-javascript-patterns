@@ -39,7 +39,7 @@ Back to reality now though.
 
 You are doing _**production**_ things in a _**production** **world**, so you need to put your _**production**_ hat on to brace for some _**production**_ _**errors**. Did I mention you are running on production?
 
-You now managed to get this awesome library working, but you need to _**log errors**_ for monitoring so you can sleep at night.
+You now managed to get this awesome library working, but you need to _**log network errors**_ for monitoring so you can sleep at night.
 
 _**But where do I log it?**_
 
@@ -53,15 +53,39 @@ try {
 }
 ```
 
-Doesn't feel right does it?
+However, it feels like logging network errors is a concern of **_Network Interface_** rather than your entire App.
 
-You have absolutely no idea _where_ and you resort to some powerful function that will miraculously catches everything.
+However, we don't really want to modify **_Network Interface_** because we don't have access to it and more importantly, even if we did, we want to ensure it doesn't do more than one thing. I'm looking at you, [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle "Single Responsibility Principle")
 
-What if we wanted to log specific things related only to _**NetworkInterface**_?
+Let me cut to the chase. What we wish for is to **extend the functionality** of the original interface while conforming to the Single Responsibility Principle.
 
-What we wish is for is to _**extend the functionality **\_of _**NetworkInterface **\_to include logging?
+The decorator pattern is a neat way of achieving this.  We can _wrap_ the original object and implements the same interface.
 
-## How is this pattern useful?
+
+```js
+const original = {
+    doSomething: () => null
+};
+
+const decorator = obj => {
+    doSomeOtherThings();
+    return {
+        doSomething: () => obj.doSomething()
+    };   
+}
+```
+
+Here's how we can _decorate_ our **_Network Interface_** nicely!
+
+```js
+const logNetworkErrors = networkInterface => ({
+    query: request => networkInterface.query(request).catch(console.err)
+});
+
+// Usage
+logNetworkErrors(originalNetworkInterface);
+```
+
 
 
 
