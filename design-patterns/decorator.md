@@ -15,9 +15,7 @@ Let's take a look at an actual real world problem. Recently, we had to implement
 The _interface_ of the NetworkInterface looks like below:
 
 ```js
-{
-    query(request: GraphQLRequest): Promise<GraphQLResult> 
-}
+query: (request: GraphQLRequest) => Promise<GraphQLResult> 
 ```
 
 For those familiar with o[bject-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), you would know that an _**interface**_ is a collection of abstract methods. If something conforms or implements the interface, you would know you can access the methods provided in the interface.
@@ -53,14 +51,13 @@ try {
 }
 ```
 
-However, it feels like logging network errors is a concern of **_Network Interface_** rather than your entire App.
+However, it feels like logging network errors is a concern of _**Network Interface**_ rather than your entire App.
 
-However, we don't really want to modify **_Network Interface_** because we don't have access to it and more importantly, even if we did, we want to ensure it doesn't do more than one thing. I'm looking at you, [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle "Single Responsibility Principle")
+However, we don't really want to modify _**Network Interface**_ because we don't have access to it and more importantly, even if we did, we want to ensure it doesn't do more than one thing. I'm looking at you, [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle "Single Responsibility Principle").
 
 Let me cut to the chase. What we wish for is to **extend the functionality** of the original interface while conforming to the Single Responsibility Principle.
 
 The decorator pattern is a neat way of achieving this.  We can _wrap_ the original object and implements the same interface.
-
 
 ```js
 const original = {
@@ -75,7 +72,7 @@ const decorator = obj => {
 }
 ```
 
-Here's how we can _decorate_ our **_Network Interface_** nicely!
+Here's how we can _decorate_ our _**Network Interface**_ nicely!
 
 ```js
 const logNetworkErrors = networkInterface => ({
@@ -85,7 +82,6 @@ const logNetworkErrors = networkInterface => ({
 // Usage
 logNetworkErrors(originalNetworkInterface);
 ```
-
 
 
 
