@@ -18,9 +18,9 @@ The _interface_ of the NetworkInterface looks like below:
 query: (request: GraphQLRequest) => Promise<GraphQLResult> 
 ```
 
-For those familiar with [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), you would know that an _**interface**_ is a collection of abstract methods. If something conforms or implements the interface, you would know you can access the methods provided in the interface.
+For those familiar with [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), you would know that an _**interface**_ is a collection of abstract methods. If something conforms to or implements the interface, you can access the methods provided in the interface.
 
-So, without looking at the Apollo's implementation, I can reasonably expect that somewhere out in the wild someone will do something along the lines of:
+So, without looking at Apollo's implementation, I can reasonably expect that somewhere out in the wild wrote something similar to:
 
 ```js
 instanceOfNetworkInterface
@@ -29,7 +29,7 @@ instanceOfNetworkInterface
 .catch(error => doSomeOtherThings)                                
 ```
 
-Kewl right? It's like a contract, only without having to sign your life away.
+Kewl right? Interfaces are like contracts, without having to sign your life away.
 
 Back to reality now though.
 
