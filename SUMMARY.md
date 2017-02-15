@@ -10,6 +10,5 @@
   * [React](libraries-and-frameworks/react/README.md)
     * [Higher Order Components](libraries-and-frameworks/react/higher-order-components.md)
     * [Functions as Child Components](libraries-and-frameworks/react/functions-as-child-components.md)
-
-
+    * [Comparison](libraries-and-frameworks/react/faq.md)
 
