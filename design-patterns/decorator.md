@@ -26,7 +26,7 @@ So, without looking at the Apollo's implementation, I can reasonably expect that
 instanceOfNetworkInterface
 .query(someGraphQLRequest)
 .then(someGraphQLResult => doSomeThings)
-.catch(err => doSomeOtherThings)                                
+.catch(error => doSomeOtherThings)                                
 ```
 
 Kewl right? It's like a contract, only without having to sign your life away.
@@ -35,7 +35,7 @@ Back to reality now though.
 
 ### Challenge: Logging
 
-You are doing _**production**_ things in a _**production** **world**, _so you need to put your_ **production** _hat on to brace for some_ **production** **errors**_. Did I mention you are running on production?
+You are doing _**production**_ things in a _**production** **world**_, so you need to put your _**production**_ hat on to brace for some _**production errors**_. Did I mention you are running on production?
 
 You now managed to get this awesome library working, but you need to _**log network errors**_ for monitoring so you can sleep at night.
 
@@ -91,7 +91,7 @@ const decoratedNetworkInterface = logNetworkErrors(originalNetworkInterface);
 Because we implement the same interface, any consumers of _decoratedNetworkInterface_ do not need to:
 
 * Change
-* Know the internals of the _logNetworkErrors. _In fact, they don't need to know that we are not using the original _**NetworkInterface**_ directly!
+* Know the internals of the logNetworkErrors. In fact, they don't need to know that we are not using the original _**NetworkInterface**_ directly!
 
 
 
