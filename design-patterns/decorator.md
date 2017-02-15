@@ -18,9 +18,9 @@ The _interface_ of the NetworkInterface looks like below:
 query: (request: GraphQLRequest) => Promise<GraphQLResult> 
 ```
 
-For those familiar with o[bject-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), you would know that an _**interface**_ is a collection of abstract methods. If something conforms or implements the interface, you would know you can access the methods provided in the interface.
+For those familiar with [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming), you would know that an _**interface**_ is a collection of abstract methods. If something conforms or implements the interface, you would know you can access the methods provided in the interface.
 
-So, without looking at the Apollo's implementation, I can reasonably expect that _somewhere_ something is doing this:
+So, without looking at the Apollo's implementation, I can reasonably expect that somewhere out in the wild someone will do something along the lines of:
 
 ```js
 instanceOfNetworkInterface
@@ -35,7 +35,7 @@ Back to reality now though.
 
 ### Challenge: Logging
 
-You are doing _**production**_ things in a _**production** **world**, so you need to put your _**production**_ hat on to brace for some _**production**_ _**errors**. Did I mention you are running on production?
+You are doing _**production**_ things in a _**production** **world**, _so you need to put your_ **production** _hat on to brace for some_ **production** **errors**_. Did I mention you are running on production?
 
 You now managed to get this awesome library working, but you need to _**log network errors**_ for monitoring so you can sleep at night.
 
@@ -53,11 +53,11 @@ try {
 
 However, it feels like logging network errors is a concern of _**Network Interface**_ rather than your entire App.
 
-However, we don't really want to modify _**Network Interface**_ because we don't have access to it and more importantly, even if we did, we want to ensure it doesn't do more than one thing. I'm looking at you, [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle "Single Responsibility Principle").
+We don't really want to modify _**Network Interface**_ because we don't have access to it and more importantly, even if we did, we want to ensure it doesn't do more than one thing. I'm looking at you, [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle "Single Responsibility Principle").
 
 Let me cut to the chase. What we wish for is to **extend the functionality** of the original interface while conforming to the Single Responsibility Principle.
 
-The decorator pattern is a neat way of achieving this.  We can _wrap_ the original object and implements the same interface.
+The decorator pattern is a neat way of achieving this. We can _wrap_ the original object and implement the same interface of the original object.
 
 ```js
 const original = {
@@ -76,12 +76,22 @@ Here's how we can _decorate_ our _**Network Interface**_ nicely!
 
 ```js
 const logNetworkErrors = networkInterface => ({
-    query: request => networkInterface.query(request).catch(console.err)
+    query: request => networkInterface
+                        .query(request)
+                        .catch(error => {
+                            console.error(error);
+                            throw error;                    
+                        })
 });
 
 // Usage
-logNetworkErrors(originalNetworkInterface);
+const decoratedNetworkInterface = logNetworkErrors(originalNetworkInterface);
 ```
+
+Because we implement the same interface, any consumers of _decoratedNetworkInterface_ do not need to:
+
+* Change
+* Know the internals of the _logNetworkErrors. _In fact, they don't need to know that we are not using the original _**NetworkInterface**_ directly!
 
 
 
