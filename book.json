@@ -1,7 +1,8 @@
 {
     "plugins": [
         "comment",
-        "init-adsense"
+        "init-adsense",
+        "sitemap"
     ],
     "pluginsConfig": {
         "comment": {
@@ -9,6 +10,9 @@
         },
         "init-adsense": {
             "client": "ca-pub-2461706123203018"
+        },
+        "sitemap": {
+            "hostname": "http://www.usefuljavascriptpatterns.com/"
         }
     }
 }
