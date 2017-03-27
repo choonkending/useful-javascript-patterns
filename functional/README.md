@@ -1,4 +1,4 @@
-# FP for Life
+# Functional Programming
 
-Go read a book or a blog post about functional programming. Seriously, just do it.
+Seriously a life-changing paradigm, I kid you not.
 
